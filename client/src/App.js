@@ -10,11 +10,11 @@ function App() {
         <Navbar />
         <br />
         <Route path="/" exact component={BookList} />
-        <Route path="/updatebook/:id" component={EditBook} />
-        <Route path="/addbook" component={CreateBook} />
-        <Route path="/movie" component={MovieList} />
-        <Route path="/updatemovie/:id" component={EditMovie} />
-        <Route path="/addmovie" component={CreateMovie} />
+        <Route path="/updatebook/:id" exact component={EditBook} />
+        <Route path="/addbook" exact component={CreateBook} />
+        <Route path="/movie" exact component={MovieList} />
+        <Route path="/updatemovie/:id" exact component={EditMovie} />
+        <Route path="/addmovie" exact component={CreateMovie} />
       </div>
     </Router>
   );
