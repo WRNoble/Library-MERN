@@ -33,7 +33,7 @@ export default class BookList extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5002/book/")
+      .get("http://localhost:5002/books/")
       .then((response) => {
         this.setState({ books: response.data });
       })
@@ -43,7 +43,7 @@ export default class BookList extends Component {
   }
 
   deleteBook(id) {
-    axios.delete("http://localhost:5002/book" + id).then((response) => {
+    axios.delete("http://localhost:5002/books/" + id).then((response) => {
       console.log(response.data);
     });
 
