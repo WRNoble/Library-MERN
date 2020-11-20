@@ -21,3 +21,33 @@ const Book = (props) => (
     </a>
   </div>
 );
+
+export default class BookList extends Component {
+  constructor(props) {
+    super(props);
+
+    this.deleteBook = this.deleteBook.bind(this);
+
+    this.state = { books: [] };
+  }
+
+  render() {
+    return (
+      <div>
+        <table className="table">
+          <thead className="thead-light">
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Genre</th>
+              <th>Published</th>
+              <th>Description</th>
+              <th>Digital</th>
+            </tr>
+          </thead>
+          <tbody>{this.bookList()}</tbody>
+        </table>
+      </div>
+    );
+  }
+}
