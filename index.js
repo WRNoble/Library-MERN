@@ -13,8 +13,8 @@ const port = process.env.PORT || 5002;
 //middleware
 app.use(cors());
 app.use(express.json());
-app.use("/book", booksRouter);
-app.use("/movie", moviesRouter);
+app.use("/books", booksRouter);
+app.use("/movies", moviesRouter);
 
 //connect to database
 const uri = process.env.ATLAS_URI;

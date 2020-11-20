@@ -31,6 +31,39 @@ export default class BookList extends Component {
     this.state = { books: [] };
   }
 
+  componentDidMount() {
+    axios
+      .get("http://localhost:5002/book/")
+      .then((response) => {
+        this.setState({ books: response.data });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  deleteBook(id) {
+    axios.delete("http://localhost:5002/book" + id).then((response) => {
+      console.log(response.data);
+    });
+
+    this.setState({
+      books: this.state.books.filter((el) => el._id !== id),
+    });
+  }
+
+  bookList() {
+    return this.state.books.map((currentbook) => {
+      return (
+        <Book
+          book={currentbook}
+          deleteBook={this.deleteBook}
+          key={currentbook._id}
+        />
+      );
+    });
+  }
+
   render() {
     return (
       <div>
