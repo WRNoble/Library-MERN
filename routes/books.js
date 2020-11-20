@@ -42,7 +42,7 @@ router.route("/:id").delete((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/update/:id").post((req, res) => {
+router.route("/updatebook/:id").post((req, res) => {
   Book.findByIdAndUpdate(req.params.id).then((book) => {
     book.title = req.body.title;
     book.author = req.body.author;

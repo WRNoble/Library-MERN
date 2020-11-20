@@ -2,7 +2,7 @@ const router = require("express").Router();
 const Book = require("../models/book.model");
 let Movie = require("../models/movie.model");
 
-router.route("/").get((req, res) => {
+router.route("/movie").get((req, res) => {
   Movie.find()
     .then((book) => res.json(book))
     .catch((err) => res.status(400).json("Error: " + err));
@@ -41,7 +41,7 @@ router.route("/:id").delete((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/update/:id").post((req, res) => {
+router.route("/updatemovie/:id").post((req, res) => {
   Movie.findByIdAndUpdate(req.params.id).then((movie) => {
     movie.title = req.body.title;
     movie.director = req.body.director;
