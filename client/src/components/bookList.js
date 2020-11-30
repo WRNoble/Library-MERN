@@ -10,15 +10,15 @@ const Book = (props) => (
     <p>{props.book.published}</p>
     <p>{props.book.description}</p>
     <p>{props.book.digital}</p>
-    <Link to={"/update/" + props.book.id}>Edit Book</Link> |{" "}
-    <a
-      href="#"
+    <Link to={"/updatebook/" + props.book._id}>Edit Book</Link> |{" "}
+    <button
+      className="btn btn-danger"
       onClick={() => {
         props.deleteBook(props.book._id);
       }}
     >
       Delete Book
-    </a>
+    </button>
   </div>
 );
 

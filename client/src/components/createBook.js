@@ -86,9 +86,8 @@ export default class CreateBook extends Component {
       digital: this.state.digital,
     };
 
-    axios
-      .post("http://localhost:5002/books/addbook", book)
-      .then((response = console.log(response.data)));
+    axios.post("http://localhost:5002/books/addbook", book);
+    //.then((response = console.log(response.data)));
 
     window.location = "/";
   }

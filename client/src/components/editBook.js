@@ -165,11 +165,7 @@ export default class EditBook extends Component {
             />
           </div>
           <div>
-            <input
-              type="submit"
-              value="Edit Book"
-              className="btn btn-caution"
-            />
+            <input type="submit" value="Edit Book" className="border" />
           </div>
         </form>
       </div>
