@@ -5,6 +5,14 @@ export default class CreateBook extends Component {
   constructor(props) {
     super(props);
 
+    this.onChangeTitle = this.onChangeTitle.bind(this);
+    this.onChangeAuthor = this.onChangeAuthor.bind(this);
+    this.onChangeGenre = this.onChangeGenre.bind(this);
+    this.onChangePublished = this.onChangePublished.bind(this);
+    this.onChangeDescription = this.onChangeDescription.bind(this);
+    this.onChangeDigital = this.onChangeDigital.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+
     this.state = {
       title: "",
       author: "",
@@ -73,7 +81,16 @@ export default class CreateBook extends Component {
       title: this.state.title,
       author: this.state.author,
       genre: this.state.genre,
+      published: this.state.published,
+      description: this.state.description,
+      digital: this.state.digital,
     };
+
+    axios
+      .post("http://localhost:5002/books/addbook", book)
+      .then((response = console.log(response.data)));
+
+    window.location = "/";
   }
 
   render() {
