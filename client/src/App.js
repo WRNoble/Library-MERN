@@ -7,6 +7,7 @@ import Navbar from "./components/navbar";
 import BookList from "./components/bookList";
 import EditBook from "./components/editBook";
 import CreateBook from "./components/createBook";
+import MovieList from "./components/movieList";
 
 function App() {
   return (
@@ -17,8 +18,8 @@ function App() {
         <Route path="/" exact component={BookList} />
         <Route path="/updatebook/:id" component={EditBook} />
         <Route path="/addbook" component={CreateBook} />
-        {/* <Route path="/movie" exact component={MovieList} />
-        <Route path="/updatemovie/:id" exact component={EditMovie} />
+        <Route path="/movie" exact component={MovieList} />
+        {/* <Route path="/updatemovie/:id" exact component={EditMovie} />
         <Route path="/addmovie" exact component={CreateMovie} /> */}
       </div>
     </Router>
