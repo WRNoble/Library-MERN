@@ -17,7 +17,7 @@ export default class EditBook extends Component {
       title: "",
       author: "",
       genre: "",
-      published: 0000,
+      published: "",
       description: "",
       digital: false,
     };
