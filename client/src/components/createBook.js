@@ -15,6 +15,67 @@ export default class CreateBook extends Component {
     };
   }
 
+  componentDidMount() {
+    axios
+      .get("http://localhost:5002/books/")
+      .then((response) => {
+        if (response.data.length > 0) {
+          this.setState({
+            books: response.data.map((book) => book.title),
+            title: response.data[0].title,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  onChangeTitle(e) {
+    this.setState({
+      title: e.target.value,
+    });
+  }
+
+  onChangeAuthor(e) {
+    this.setState({
+      author: e.target.value,
+    });
+  }
+
+  onChangeGenre(e) {
+    this.setState({
+      genre: e.target.value,
+    });
+  }
+
+  onChangePublished(e) {
+    this.setState({
+      published: e.target.value,
+    });
+  }
+
+  onChangeDescription(e) {
+    this.setState({
+      description: e.target.value,
+    });
+  }
+
+  onChangeDigital(e) {
+    this.setState({
+      digital: e.target.value,
+    });
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    const book = {
+      title: this.state.title,
+      author: this.state.author,
+      genre: this.state.genre,
+    };
+  }
+
   render() {
     return (
       <div>
