@@ -5,10 +5,9 @@ import axios from "axios";
 const Movie = (props) => (
   <div>
     <p>{props.movie.title}</p>
-    <p>{props.movie.author}</p>
+    <p>{props.movie.director}</p>
     <p>{props.movie.genre}</p>
-    <p>{props.movie.published}</p>
-    <p>{props.movie.description}</p>
+    <p>{props.movie.released}</p>
     <p>{props.movie.digital}</p>
     <Link to={"/updatemovie/" + props.movie._id}>Edit Movie</Link> |{" "}
     <button

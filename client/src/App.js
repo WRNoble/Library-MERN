@@ -8,6 +8,7 @@ import BookList from "./components/bookList";
 import EditBook from "./components/editBook";
 import CreateBook from "./components/createBook";
 import MovieList from "./components/movieList";
+import CreateMovie from "./components/createMovie";
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
         <Route path="/updatebook/:id" component={EditBook} />
         <Route path="/addbook" component={CreateBook} />
         <Route path="/movie" exact component={MovieList} />
-        {/* <Route path="/updatemovie/:id" exact component={EditMovie} />
-        <Route path="/addmovie" exact component={CreateMovie} /> */}
+        {/* <Route path="/updatemovie/:id" exact component={EditMovie} /> */}
+        <Route path="/addmovie" component={CreateMovie} />
       </div>
     </Router>
   );

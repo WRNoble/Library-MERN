@@ -26,14 +26,7 @@ export default class CreateBook extends Component {
   componentDidMount() {
     axios
       .get("http://localhost:5002/books/")
-      .then((response) => {
-        if (response.data.length > 0) {
-          this.setState({
-            books: response.data.map((book) => book.title),
-            title: response.data[0].title,
-          });
-        }
-      })
+
       .catch((error) => {
         console.log(error);
       });

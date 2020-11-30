@@ -1,10 +1,9 @@
 const router = require("express").Router();
-const Book = require("../models/book.model");
 let Movie = require("../models/movie.model");
 
-router.route("/movie").get((req, res) => {
+router.route("/movies").get((req, res) => {
   Movie.find()
-    .then((book) => res.json(book))
+    .then((movie) => res.json(movie))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
