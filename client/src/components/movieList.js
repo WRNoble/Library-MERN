@@ -32,7 +32,7 @@ export default class MovieList extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5002/movies/")
+      .get("http://localhost:5002/movies/movies")
       .then((response) => {
         this.setState({ movies: response.data });
       })
