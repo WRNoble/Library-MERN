@@ -16,7 +16,7 @@ function App() {
     <Router>
       <div>
         <Navbar />
-        <br />
+        {/* <br /> */}
         <Route path="/" exact component={BookList} />
         <Route path="/updatebook/:id" component={EditBook} />
         <Route path="/addbook" component={CreateBook} />

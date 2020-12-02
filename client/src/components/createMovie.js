@@ -85,7 +85,7 @@ export default class CreateMovie extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h2>Add New Movie</h2>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">

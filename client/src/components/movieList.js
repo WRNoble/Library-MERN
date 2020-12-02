@@ -10,7 +10,7 @@ const Movie = (props) => (
     <td>{props.movie.released}</td>
     <td>{props.movie.digital}</td>
     <td>
-      <Link to={"/updatemovie/" + props.movie._id}>Edit</Link>
+      <Link to={"/updatemovie/" + props.movie._id}>Edit Movie</Link>
       <br />
       <button
         className="btn btn-danger"
