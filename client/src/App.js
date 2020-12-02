@@ -14,7 +14,7 @@ import EditMovie from "./components/editMovie";
 function App() {
   return (
     <Router>
-      <div className="container">
+      <div>
         <Navbar />
         <br />
         <Route path="/" exact component={BookList} />

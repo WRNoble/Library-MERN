@@ -9,7 +9,7 @@ const bookSchema = new Schema(
     genre: { type: String, required: true },
     published: { type: Number, required: true },
     description: { type: String, required: true },
-    digital: { type: Boolean, required: true },
+    digital: { type: String, required: true },
   },
   {
     timestamps: true,

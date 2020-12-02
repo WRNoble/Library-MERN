@@ -3,23 +3,25 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Book = (props) => (
-  <div>
-    <p>{props.book.title}</p>
-    <p>{props.book.author}</p>
-    <p>{props.book.genre}</p>
-    <p>{props.book.published}</p>
-    <p>{props.book.description}</p>
-    <p>{props.book.digital}</p>
-    <Link to={"/updatebook/" + props.book._id}>Edit Book</Link> |{" "}
-    <button
-      className="btn btn-danger"
-      onClick={() => {
-        props.deleteBook(props.book._id);
-      }}
-    >
-      Delete Book
-    </button>
-  </div>
+  <tr>
+    <td>{props.book.title}</td>
+    <td>{props.book.author}</td>
+    <td>{props.book.genre}</td>
+    <td>{props.book.published}</td>
+    <td>{props.book.description}</td>
+    <td>{props.book.digital}</td>
+    <td>
+      <Link to={"/updatebook/" + props.book._id}>Edit Book</Link>
+      <button
+        className="btn btn-danger"
+        onClick={() => {
+          props.deleteBook(props.book._id);
+        }}
+      >
+        Delete
+      </button>
+    </td>
+  </tr>
 );
 
 export default class BookList extends Component {
@@ -76,6 +78,7 @@ export default class BookList extends Component {
               <th>Published</th>
               <th>Description</th>
               <th>Digital</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>{this.bookList()}</tbody>

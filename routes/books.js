@@ -13,7 +13,7 @@ router.route("/addbook").post((req, res) => {
   const genre = req.body.genre;
   const published = Number(req.body.published);
   const description = req.body.description;
-  const digital = Boolean(req.body.digital);
+  const digital = req.body.digital;
 
   const newBook = new Book({
     title,
@@ -49,7 +49,7 @@ router.route("/updatebook/:id").post((req, res) => {
     book.genre = req.body.genre;
     book.published = Number(req.body.published);
     book.description = req.body.description;
-    book.digital = Boolean(req.body.digital);
+    book.digital = req.body.digital;
 
     book
       .save()

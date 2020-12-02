@@ -3,22 +3,25 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Movie = (props) => (
-  <div>
-    <p>{props.movie.title}</p>
-    <p>{props.movie.director}</p>
-    <p>{props.movie.genre}</p>
-    <p>{props.movie.released}</p>
-    <p>{props.movie.digital}</p>
-    <Link to={"/updatemovie/" + props.movie._id}>Edit Movie</Link> |{" "}
-    <button
-      className="btn btn-danger"
-      onClick={() => {
-        props.deleteMovie(props.movie._id);
-      }}
-    >
-      Delete Movie
-    </button>
-  </div>
+  <tr>
+    <td>{props.movie.title}</td>
+    <td>{props.movie.director}</td>
+    <td>{props.movie.genre}</td>
+    <td>{props.movie.released}</td>
+    <td>{props.movie.digital}</td>
+    <td>
+      <Link to={"/updatemovie/" + props.movie._id}>Edit</Link>
+      <br />
+      <button
+        className="btn btn-danger"
+        onClick={() => {
+          props.deleteMovie(props.movie._id);
+        }}
+      >
+        Delete
+      </button>
+    </td>
+  </tr>
 );
 
 export default class MovieList extends Component {
@@ -74,6 +77,7 @@ export default class MovieList extends Component {
               <th>Genre</th>
               <th>Released</th>
               <th>Digital</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>{this.movieList()}</tbody>

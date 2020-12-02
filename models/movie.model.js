@@ -8,7 +8,7 @@ const movieSchema = new Schema(
     director: { type: String, required: true },
     genre: { type: String, required: true },
     released: { type: Number, required: true },
-    digital: { type: Boolean, required: true },
+    digital: { type: String, required: true },
   },
   {
     timestamps: true,

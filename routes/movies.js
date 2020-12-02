@@ -12,7 +12,7 @@ router.route("/addmovie").post((req, res) => {
   const director = req.body.director;
   const genre = req.body.genre;
   const released = Number(req.body.released);
-  const digital = Boolean(req.body.digital);
+  const digital = req.body.digital;
 
   const newMovie = Movie({
     title,
@@ -46,7 +46,7 @@ router.route("/updatemovie/:id").post((req, res) => {
     movie.director = req.body.director;
     movie.genre = req.body.genre;
     movie.released = Number(req.body.released);
-    movie.digital = Boolean(req.body.digital);
+    movie.digital = req.body.digital;
 
     movie
       .save()
