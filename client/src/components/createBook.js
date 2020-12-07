@@ -19,7 +19,7 @@ export default class CreateBook extends Component {
       genre: "",
       published: "",
       description: "",
-      digital: false,
+      digital: "No",
     };
   }
 
