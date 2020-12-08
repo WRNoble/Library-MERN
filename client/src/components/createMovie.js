@@ -17,7 +17,7 @@ export default class CreateMovie extends Component {
       director: "",
       genre: "",
       Released: "",
-      digital: false,
+      digital: "No",
     };
   }
 

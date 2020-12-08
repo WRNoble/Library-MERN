@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+import SearchBookGenre from "./SearchBookGenre";
+import SearchBookAuthor from "./SearchBookAuthor";
+
 const Book = (props) => (
   <tr>
     <td>{props.book.title}</td>
@@ -69,6 +72,8 @@ export default class BookList extends Component {
   render() {
     return (
       <div>
+        <SearchBookGenre />
+        <SearchBookAuthor />
         <table className="table">
           <thead className="thead-light">
             <tr>

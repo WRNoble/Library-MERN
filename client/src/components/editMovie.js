@@ -17,7 +17,7 @@ export default class EditMovie extends Component {
       director: "",
       genre: "",
       released: "",
-      digital: false,
+      digital: "No",
     };
   }
 
